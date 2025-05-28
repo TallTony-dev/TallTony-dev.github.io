@@ -1,0 +1,42 @@
+.card {
+    border-radius: 8px;
+    padding: 400px;
+    backdrop-filter: blur(20px);
+    background-color:rgba(255, 255, 255, 0.089);
+    box-shadow: 0 12px 18px rgba(111, 0, 255, 0.089);
+    border: 1px solid rgba(255, 255, 255, 0.301);
+    transition:transform 0.3s;
+    will-change: transform;
+    user-select: none;
+    transition-timing-function:ease;
+    transition-property: all;
+}
+.card:hover {
+    transform: translate(-50%, -50%) translate(0, 10px);
+    background-color: rgba(0, 0, 0, 0.089);
+    border: 5px solid rgba(150, 150, 150, 0.555)
+}
+.card:active {
+    transform: translate(-50%, -50%) translate(0, 50px);
+}
+
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.subtitle {
+    font-size: 2.5em;
+    
+}
+
