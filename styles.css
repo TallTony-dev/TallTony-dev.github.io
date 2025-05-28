@@ -1,37 +1,68 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(210, 207, 179, 1);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    * {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
+    }
+    *::-webkit-scrollbar {
+        width: 0;
+    }
+    *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+    }
+    *::-webkit-scrollbar-track {
+    background: transparent;
+    }
+}
+
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0; /*leave this here*/
+}
+
+
 .card {
-    border-radius: 1em;
+    border-radius: 3em;
     padding: 1em;
-    width: 60%;
-    height: 60%;
+    height: 70%;
     backdrop-filter: blur(0.2em);
     background-color:rgba(0, 0, 0, 0.089);
     box-shadow: 0 12px 18px rgba(111, 0, 255, 0.089);
     border: 1px solid rgba(255, 255, 255, 0.301);
     transition:transform 0.4s;
+
+    position: relative;
+    flex: 0 0 100%;
+
     will-change: transform;
     user-select: none;
     -webkit-user-select: none;
     transition-timing-function:ease;
     transition-property: all;
     background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1), var(--myColor2));
-    transition: --myColor1 3s, --myColor2 3s, transform 500ms;
+    transition: --myColor1 1.5s, --myColor2 2s, transform 500ms;
 }
 .card:hover {
-    transform: translate(-50%, -50%) translate(0, 10px);
-    background-color: rgba(0, 0, 0, 0.24);
+    transform: translate(0, 10px);
     border: 4px solid rgba(150, 150, 150, 0.555);
-    --myColor1: rgba(147, 151, 87, 0.35);
-    --myColor2: rgba(255, 255, 255, 0.3);
-
-}
-.card:active {
-    transform: translate(-50%, -50%) translate(0, 50px) rotateZ(50deg) rotateX(50deg);
-    
+    --myColor1: rgba(250, 186, 182, 0.6);
+    --myColor2: rgba(255, 255, 255, 0.4);
 }
 
 @property --myColor1 {
   syntax: '<color>';
-  initial-value: rgba(237, 255, 132, 0.329);
+  initial-value: rgba(250, 186, 182, 0.329);
   inherits: false;
 }
 
@@ -52,11 +83,39 @@
 }
 .container {
   position: absolute;
-  top: 0;
+  top: 1;
   left: 0;
   text-align: center;
   color: white;
 }
+
+.carousel {
+  position: relative;
+  padding-top: 100%;
+  filter: drop-shadow(0 0 10px #0003);
+}
+
+.carouselviewport {
+  position: absolute;
+  top: 0em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carouselsnapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}   
 
 .centered {
   position: absolute;
@@ -71,3 +130,55 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+  left: 1rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: 1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #ffffff00;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel::before {
+  background-image: url("images/leftarrow.svg");
+  background-size: 1.5em;
+}
+
+.carousel::after {
+  background-image: url("images/rightarrow.svg");
+  background-size: 1.5em;
+}

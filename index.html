@@ -2,17 +2,44 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <title>Tony Abbass</title>
     </head>
 
-    <body style="background-color: rgb(233, 202, 165);">
-    </body>
+    <div class="carousel">
+        <ol class="carouselviewport">
+            <li id="carouselcard1" tabindex="0" class="card">
+                <div class="carouselsnapper">
+                    <a href="#carouselcard4" class="carousel__prev">Go to last slide</a>
+                    <a href="#carouselcard2" class="carousel__next">Go to next slide</a>
 
-    <div class="container">
+                </div>
+            </li>
+            <li id="carouselcard2" tabindex="1" class="card">
+                <div class="carouselsnapper"></div>
+                    <a href="#carouselcard1" class="carousel__prev">Go to previous slide</a>
+                    <a href="#carouselcard3" class="carousel__next">Go to next slide</a>
+
+            </li>
+            <li id="carouselcard3" tabindex="2" class="card">
+                <div class="carouselsnapper"></div>
+                    <a href="#carouselcard2" class="carousel__prev">Go to previous slide</a>
+                    <a href="#carouselcard4" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carouselcard4" tabindex="3" class="card">
+                <div class="carouselsnapper"></div>
+                    <a href="#carouselcard3" class="carousel__prev">Go to previous slide</a>
+                    <a href="#carouselcard1" class="carousel__next">Go to first slide</a>
+            </li>
+        </div>
+    </div>
+
+    <!-- <div class="container">
         <div class="gradient"></div>
         <img src="images/Wallpaper forest.jpg" alt="Background image" 
         style="width: 100%; height: auto; user-select: none; -webkit-touch-callout: none; -webkit-user-select: none; ">
         <div class="centered card subtitle">Yuh look at this CENTERED text it can go pretty far but sometimes it needs a newline like<br />bam<br /><br />isn't that crazy<br /><br />gurt: yo</div>
-    </div>
+        <button type="button"><img src="images/testimage.PNG" alt="right scroll button"></button>
+    </div> -->
 
 
 </html>
