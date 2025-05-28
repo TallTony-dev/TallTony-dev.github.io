@@ -32,11 +32,17 @@ ol, li {
   padding: 0; /*leave this here*/
 }
 
+.cardtitle {
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1em;
+    color: rgba(255, 255, 255, 0.9);
+}
 
 .card {
     border-radius: 3em;
-    padding: 1em;
-    height: 70%;
+    height: 60vh;
     backdrop-filter: blur(0.2em);
     background-color:rgba(0, 0, 0, 0.089);
     box-shadow: 0 12px 18px rgba(111, 0, 255, 0.089);
@@ -52,7 +58,7 @@ ol, li {
     transition-timing-function:ease;
     transition-property: all;
     background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1), var(--myColor2));
-    transition: --myColor1 1.5s, --myColor2 2s, transform 500ms;
+    transition: --myColor1 1.5s, --myColor2 2s, transform 500ms, border 500ms;
 }
 .card:hover {
     transform: translate(0, 10px);
@@ -84,7 +90,7 @@ ol, li {
 }
 .container {
   position: absolute;
-  top: 1;
+  top: 0;
   left: 0;
   text-align: center;
   color: white;
@@ -94,11 +100,14 @@ ol, li {
   position: relative;
   padding-top: 100%;
   filter: drop-shadow(0 0 10px #0003);
+  width: 50%;
+  left:25%;
+  top:10vh;
 }
 
 .carouselviewport {
   position: absolute;
-  top: 0em;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -107,6 +116,7 @@ ol, li {
   counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+
 }
 
 .carouselsnapper {
