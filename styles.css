@@ -1,8 +1,10 @@
 .card {
-    border-radius: 8px;
-    padding: 400px;
-    backdrop-filter: blur(20px);
-    background-color:rgba(255, 255, 255, 0.089);
+    border-radius: 1em;
+    padding: 1em;
+    width: 20em;
+    height: 10em;
+    backdrop-filter: blur(0.2em);
+    background-color:rgba(0, 0, 0, 0.089);
     box-shadow: 0 12px 18px rgba(111, 0, 255, 0.089);
     border: 1px solid rgba(255, 255, 255, 0.301);
     transition:transform 0.3s;
@@ -13,11 +15,12 @@
 }
 .card:hover {
     transform: translate(-50%, -50%) translate(0, 10px);
-    background-color: rgba(0, 0, 0, 0.089);
-    border: 5px solid rgba(150, 150, 150, 0.555)
+    background-color: rgba(0, 0, 0, 0.24);
+    border: 4px solid rgba(150, 150, 150, 0.555)
 }
 .card:active {
     transform: translate(-50%, -50%) translate(0, 50px);
+    background-color: rgba(0, 0, 0, 0.753);
 }
 
 
