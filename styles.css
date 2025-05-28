@@ -10,6 +10,7 @@
     transition:transform 0.3s;
     will-change: transform;
     user-select: none;
+    -webkit-user-select: none;
     transition-timing-function:ease;
     transition-property: all;
 }
