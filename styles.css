@@ -7,6 +7,7 @@ body {
     background-color: rgba(210, 207, 179, 1);
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 
     * {
     box-sizing: border-box;
