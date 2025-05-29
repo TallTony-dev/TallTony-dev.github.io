@@ -73,7 +73,7 @@ ol, li {
     -webkit-border-radius: 3em;
     outline: none;
     backdrop-filter: blur(0.2em);
-    background-color:rgba(0, 0, 0, 0.089);
+    background-color:rgba(0, 0, 0, 0);
     box-shadow: 0 10px 12px -10px rgba(0, 0, 0, 0.449);
     border: 3px solid rgba(0, 0, 0, 0.795);
     position: relative;
