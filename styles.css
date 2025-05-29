@@ -27,10 +27,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
 
-    background: linear-gradient(45deg,rgb(43, 207, 131), rgb(77, 77, 77), rgb(253, 97, 100));
-	background-size: 400% 400%;
-	animation: gradient 20s ease infinite;
-	height: 100vh;
+    background: linear-gradient(45deg,rgb(43, 207, 131), rgb(43, 38, 100), rgb(253, 97, 100));
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 100vh;
 
     * {
     box-sizing: border-box;
@@ -66,6 +66,7 @@ ol, li {
 .card {
     border-radius: 3em;
     -webkit-border-radius: 3em;
+    outline: none;
 
     height: 60vh;
     backdrop-filter: blur(0.2em);
@@ -84,7 +85,7 @@ ol, li {
     transition-timing-function:ease;
     transition-property: all;
     background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1), var(--myColor2));
-    transition: --myColor1 0.5s, --myColor2 2s, transform 0.2s ease-in-out, border 500ms;
+    transition: --myColor1 0.5s, --myColor2 2s, transform 0.4s cubic-bezier(.47,1.64,.41,.8), border 500ms;
 }
 .card:hover {
     transform: translate(0, 10px);
@@ -94,13 +95,6 @@ ol, li {
 }
 .card:active {
     transform: scale(0.95);
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-.card{
-    width: 100%;
-    border-radius: 0;
-}
 }
 
 @property --myColor1 {
@@ -126,11 +120,13 @@ ol, li {
 .carouselviewport {
   position: relative;
   display: flex;
+  
   overflow-x: scroll;
   counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   height: 100%;
+  gap: 400%
 }
 
 .carouselsnapper {
