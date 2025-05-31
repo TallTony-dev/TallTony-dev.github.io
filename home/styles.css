@@ -11,7 +11,6 @@
 }
 
 body {
-    display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -20,16 +19,21 @@ body {
 
     margin: 0;
     padding: 0;
+
     background-color: rgb(96, 93, 255);
     color: #fff;
 
     font-family: 'Josefin sans', serif;
     color: rgb(212, 227, 255);
 
-    background: linear-gradient(45deg,rgb(43, 207, 131), rgb(43, 38, 100), rgb(253, 97, 100));
-    background-size: 300% 300%;
+    overflow-anchor: none;
+
+    background: linear-gradient(45deg,rgb(43, 207, 131), rgb(43, 38, 100),
+     rgb(43, 158, 28));
+    background-size: 400% 500%;
     animation: gradient 15s ease infinite;
     height: 100vh;
+    outline: none;
 
     * {
     box-sizing: border-box;
@@ -51,18 +55,22 @@ body {
 header {
   width: 100%;
   text-align: center;
-  margin-bottom: 2em;
-  position: absolute;
+  position: relative;
   top: 2vh;
   font-size:larger;
   color:rgb(231, 212, 255);
 }
 
+.box {
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+}
 
 ol, li {
   list-style: none;
   margin: 0;
-  padding: 0; /*leave this here*/
 }
 
 .scaleonhover {
@@ -76,12 +84,10 @@ ol, li {
 .cardcontent {
   padding-left: 2em;
   padding-right: 2em;
-  gap: 1em;
-  height: 100%;
 }
 
 .cardtitle {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 700;
   color: rgb(0, 0, 0);;
   padding-left: 0.3em;
@@ -92,17 +98,23 @@ ol, li {
   font-size: 1.8em;
   font-weight: 300;
   color: #d1d1d1;
-  width: Clamp(20em, 70%, 40em);
   margin-left: 2em;
-  margin-right: em;
+  margin-right: 2em;
 }
 
 .cardimage {
-  width: Clamp(40%, 80%, 80%);
-  height: Clamp(20%, 30%, 40%);
-  margin-left: 4em;
-  margin-right: 4em;
-  object-fit: contain;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .cardcontent {
+    padding: 0;
+  }
+  .carddescription {
+    margin: 1em;
+  }
 }
 
 .card.ghost {
@@ -121,24 +133,39 @@ ol, li {
     border: 5px solid rgba(0, 0, 0, 0.795);
     position: relative;
     flex: 0 0 auto;
-    margin-top: 13em;
+    margin-top: 2em;
 
-    width: clamp(30em, 80vw, 50em);
-    height: clamp(40em, 60vh, 900em);
+    scroll-margin-top: 10em;
+
+    width: 90%;
+    height: 100%;
+    max-width: 60em;
 
     will-change: transform;
     user-select: none;
     -webkit-user-select: none;
     transition-timing-function:ease;
     transition-property: all;
-    background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1), rgb(31, 28, 32), var(--myColor2));
+    background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1) 0%, 
+    rgba(49, 43, 51, 0) 83%, var(--myColor2) 95%);
     transition: --myColor1 0.5s, --myColor2 0.5s, transform 0.4s cubic-bezier(.47,1.64,.41,.8), 
     border 500ms, opacity 0.5s;
 }
+@property --myColor1 {
+  syntax: '<color>';
+  initial-value: rgba(12, 34, 83, 0.63);
+  inherits: false;
+}
+@property --myColor2 {
+  syntax: '<color>';
+  initial-value: rgba(49, 49, 49, 0.342);
+  inherits: false;
+}
 .card:hover {
     border: 5px solid #c3b091;
-    --myColor1: rgba(92, 207, 163, 0.6);
-    --myColor2: rgba(255, 255, 255, 0.4);
+    --myColor1: rgba(124, 137, 255, 0.644);
+    --myColor2: rgba(106, 71, 134, 0.445);
+    
 }
 .card:active {
     transform: scale(0.95);
@@ -153,36 +180,14 @@ ol, li {
     opacity: 1;
     transform: scale(1);
   }
-  .card:target:hover {
-    transform: scale(1.05);
-  }
-  .card:target:active {
-    transform:scale(1.02);
-  }
+
 }
 
-
-@property --myColor1 {
-  syntax: '<color>';
-  initial-value: rgba(148, 35, 138, 0.63);
-  inherits: false;
-}
-
-@property --myColor2 {
-  syntax: '<color>';
-  initial-value: rgba(49, 49, 49, 0.342);
-  inherits: false;
-}
 
 .carousel {
   position: relative;
   display: flex;
-  justify-content: center;
-  filter: drop-shadow(0 0 10px #0003);
-  width: 100vw;
-  height: 100vh;
   overflow: visible;
-
 }
 
 .carouselviewport {
@@ -214,68 +219,73 @@ ol, li {
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
 }
+@media only screen and (min-width: 768px) {
+  .card::before,
+  .card::after,
+  .carousel__prev,
+  .carousel__next {
+    position: absolute;
+    top: 50%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+  }
 
-.card::before,
-.card::after,
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 50%;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  font-size: 0;
-  outline: 0;
-}
+  .card::before,
+  .carousel__prev {
+    left: 1rem;
+  }
 
-.card::before,
-.carousel__prev {
-  left: 1rem;
-}
+  .card::after,
+  .carousel__next {
+    right: 1rem;
+  }
 
-.card::after,
-.carousel__next {
-  right: 1rem;
-}
+  .card::before,
+  .card::after {
+    content: '';
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+    transition:all 0.5s;
+  }
+  .card:hover::before,
+  .card:hover::after {
+    filter: saturate(100%) invert(73%) sepia(8%) saturate(928%) hue-rotate(359deg) brightness(97%) contrast(140%);
+  }
 
-.card::before,
-.card::after {
-  content: '';
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
-  transition:all 0.5s;
-}
-.card:hover::before,
-.card:hover::after {
-  filter: saturate(100%) invert(73%) sepia(8%) saturate(928%) hue-rotate(359deg) brightness(97%) contrast(140%);
-}
+  .card::before {
+    background-image: url("images/leftarrow.svg");
+    background-size: 1.6em;
+  }
 
-.card::before {
-  background-image: url("images/leftarrow.svg");
-  background-size: 1.6em;
-}
-
-.card::after {
-  background-image: url("images/rightarrow.svg");
-  background-size: 1.6em;
+  .card::after {
+    background-image: url("images/rightarrow.svg");
+    background-size: 1.6em;
+  }
 }
 
 footer {
   width: 100%;
   text-align: center;
-  position: absolute;
-  margin-top: Clamp(58em, 80vh, 80em);
+  position: relative;
+  margin-top: 5em;
+}
+
+.scalewithvh {
+  height: Clamp(44px, 5vh, 80em);
 }
 
 .minimapcontainer {
-  position: absolute;
-  margin-top: Clamp(48em, 63vh, 53em);
+  position: relative;
 }
 
 .minimap {
   display: flex;
-  gap: 1em;
+  gap: 5vw;
   padding-right: 40px;
+  justify-content: center;
 }
