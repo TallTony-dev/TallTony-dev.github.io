@@ -11,7 +11,6 @@
 }
 
 body {
-    align-items: center;
     justify-content: center;
     height: 100vh;
     min-height: 100vh;
@@ -32,7 +31,6 @@ body {
      rgb(43, 158, 28));
     background-size: 400% 500%;
     animation: gradient 15s ease infinite;
-    height: 100vh;
     outline: none;
 
     * {
@@ -62,9 +60,10 @@ header {
 }
 
 .box {
-  display: inline-block;
-
-  margin: 0;
+  display: inline;
+  float: right;
+  margin-right: 1em;
+  margin-top: -3em;
   padding: 0;
 }
 
@@ -92,6 +91,7 @@ ol, li {
   color: rgb(0, 0, 0);;
   padding-left: 0.3em;
   margin-bottom: 0;
+  width:fit-content
 }
 
 .carddescription {
@@ -99,13 +99,15 @@ ol, li {
   font-weight: 300;
   color: #d1d1d1;
   margin-left: 2em;
-  margin-right: 2em;
+  margin-right: 1.7em;
+  margin-top: 0.5em;
 }
 
 .cardimage {
-  display: block;
   max-width: 100%;
   height: auto;
+  padding: 0;
+  border: 5px solid rgb(16, 6, 44);
 }
 
 @media only screen and (max-width: 768px) {
@@ -113,7 +115,11 @@ ol, li {
     padding: 0;
   }
   .carddescription {
-    margin: 1em;
+    margin: 0.4em;
+  }
+  .box {
+    margin-right: 0.5em;
+    margin-top: 0;
   }
 }
 
@@ -121,7 +127,7 @@ ol, li {
   pointer-events: none;
   visibility: hidden;
   flex: 0 0 auto;
-  width: 50%; /* spaces out edges */
+  width: 50%;
 }
 
 .card {
@@ -135,11 +141,10 @@ ol, li {
     flex: 0 0 auto;
     margin-top: 2em;
 
-    scroll-margin-top: 10em;
+    scroll-margin-top: 100em;
 
-    width: 90%;
-    height: 100%;
-    max-width: 60em;
+
+    width: Clamp(0%, 100%, 60em);
 
     will-change: transform;
     user-select: none;
@@ -171,18 +176,34 @@ ol, li {
     transform: scale(0.95);
 }
 
+.mobileonly {
+  display: none;
+}
+
+.desktoponly {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse){
+  .mobileonly {
+    display: flex;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
-    .card {
+  .card {
     opacity: 0.5;
     transform: scale(0.5);
+    transform-origin: bottom;
   }
   .card:target {
     opacity: 1;
     transform: scale(1);
   }
-
+  .desktoponly {
+    display: unset;
+  }
 }
-
 
 .carousel {
   position: relative;
@@ -208,14 +229,6 @@ ol, li {
     height: 100%;
     scroll-snap-align: center;
 }   
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
 }
@@ -281,6 +294,14 @@ footer {
 
 .minimapcontainer {
   position: relative;
+}
+
+.iconbg {
+  background-color: rgba(0, 0, 0, 0.795);
+  border-radius: 1em;
+}
+.iconbg:hover {
+  background-color:rgba(12, 34, 83, 0.63);
 }
 
 .minimap {
