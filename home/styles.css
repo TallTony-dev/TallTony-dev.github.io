@@ -72,6 +72,12 @@ ol, li {
   margin: 0;
 }
 
+.styledlist {
+  list-style: circle;
+  list-style-type: "✔️";
+  margin: auto;
+}
+
 .scaleonhover {
   will-change: transform;
   transition: 200ms;
@@ -116,6 +122,7 @@ ol, li {
   }
   .carddescription {
     margin: 0.4em;
+    font-size: 1.3em;
   }
   .box {
     margin-right: 0.5em;
