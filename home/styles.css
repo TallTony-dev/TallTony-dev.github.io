@@ -19,7 +19,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: rgb(96, 93, 255);
+    background-color: rgb(255, 93, 93);
     color: #fff;
 
     font-family: 'Josefin sans', serif;
@@ -27,8 +27,8 @@ body {
 
     overflow-anchor: none;
 
-    background: linear-gradient(45deg,rgb(43, 207, 131), rgb(43, 38, 100),
-     rgb(43, 158, 28));
+    background: linear-gradient(45deg,rgb(207, 43, 43), rgb(25, 80, 143),
+     rgb(30, 255, 0));
     background-size: 400% 500%;
     animation: gradient 15s ease infinite;
     outline: none;
@@ -56,7 +56,7 @@ header {
   position: relative;
   top: 2vh;
   font-size:larger;
-  color:rgb(231, 212, 255);
+  color:rgb(255, 195, 217);
 }
 
 .box {
@@ -159,7 +159,7 @@ ol, li {
     transition-timing-function:ease;
     transition-property: all;
     background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1) 0%, 
-    rgba(49, 43, 51, 0) 83%, var(--myColor2) 95%);
+    rgba(255, 54, 98, 0.39) 83%, var(--myColor2) 95%);
     transition: --myColor1 0.5s, --myColor2 0.5s, transform 0.4s cubic-bezier(.47,1.64,.41,.8), 
     border 500ms, opacity 0.5s;
 }
@@ -175,8 +175,8 @@ ol, li {
 }
 .card:hover {
     border: 5px solid #c3b091;
-    --myColor1: rgba(124, 137, 255, 0.644);
-    --myColor2: rgba(106, 71, 134, 0.445);
+    --myColor1: rgba(206, 0, 0, 0.829);
+    --myColor2: rgba(255, 85, 136, 0.589);
     
 }
 .card:active {
@@ -308,7 +308,7 @@ footer {
   border-radius: 1em;
 }
 .iconbg:hover {
-  background-color:rgba(12, 34, 83, 0.63);
+  background-color:rgba(255, 0, 0, 0.63);
 }
 
 .minimap {
