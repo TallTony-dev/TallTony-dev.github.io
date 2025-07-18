@@ -147,6 +147,7 @@ ol, li {
     position: relative;
     flex: 0 0 auto;
     margin-top: 2em;
+    padding-bottom: 2em;
 
     scroll-margin-top: 100em;
 
