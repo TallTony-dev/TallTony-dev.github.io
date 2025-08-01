@@ -56,7 +56,7 @@ header {
   position: relative;
   top: 2vh;
   font-size:larger;
-  color:rgb(255, 195, 217);
+  color:rgb(0, 0, 0);
 }
 
 .box {
@@ -166,7 +166,7 @@ ol, li {
 }
 @property --myColor1 {
   syntax: '<color>';
-  initial-value: rgba(12, 34, 83, 0.63);
+  initial-value: rgba(25, 12, 83, 0.63);
   inherits: false;
 }
 @property --myColor2 {
@@ -175,9 +175,9 @@ ol, li {
   inherits: false;
 }
 .card:hover {
-    border: 5px solid #c3b091;
-    --myColor1: rgba(206, 0, 0, 0.829);
-    --myColor2: rgba(255, 85, 136, 0.589);
+    border: 5px solid rgb(16, 6, 44);
+    --myColor1: rgba(91, 63, 156, 0.829);
+    --myColor2: rgba(59, 156, 156, 0.589);
     
 }
 .card:active {
