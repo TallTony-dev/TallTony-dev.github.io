@@ -160,7 +160,7 @@ ol, li {
     transition-timing-function:ease;
     transition-property: all;
     background-image: radial-gradient(farthest-corner at 0% 0%, var(--myColor1) 0%, 
-    rgba(255, 54, 98, 0.39) 83%, var(--myColor2) 95%);
+    rgba(57, 62, 82, 0.39) 83%, var(--myColor2) 95%);
     transition: --myColor1 0.5s, --myColor2 0.5s, transform 0.4s cubic-bezier(.47,1.64,.41,.8), 
     border 500ms, opacity 0.5s;
 }
