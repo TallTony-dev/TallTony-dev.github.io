@@ -12,6 +12,9 @@ body {
   text-align: center;
   
 }
+a {
+  color: aliceblue;
+}
 a:visited {
   color: rgb(255, 0, 0); /* Example color for visited links */
 }
