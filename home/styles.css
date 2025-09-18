@@ -192,14 +192,7 @@ ol, li {
   display: none;
 }
 
-@media (hover: none) and (pointer: coarse){
-  .mobileonly {
-    display: flex;
-  }
-    .carouselviewport {
-    overflow: auto;
-  }
-}
+
 
 @media (hover: hover) and (pointer: fine) {
   .card {
@@ -237,7 +230,14 @@ ol, li {
 .carouselviewport {
     overflow: hidden;
 }
-
+@media (hover: none) and (pointer: coarse){
+  .mobileonly {
+    display: flex;
+  }
+    .carouselviewport {
+    overflow: auto;
+  }
+}
 .carouselsnapper {
     position: absolute;
     width: 100%;
