@@ -196,6 +196,9 @@ ol, li {
   .mobileonly {
     display: flex;
   }
+    .carouselviewport {
+    overflow: auto;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -226,9 +229,13 @@ ol, li {
   counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  
   height: 100%;
   width: 100%;
   gap: 200%;
+}
+.carouselviewport {
+    overflow: hidden;
 }
 
 .carouselsnapper {
