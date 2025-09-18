@@ -32,8 +32,14 @@ a:hover {
   color: rgb(255, 238, 0); /* Example color on hover */
 }
 .fun {
-    color: blue;
-    font-size: 32px;
-    padding:0; 
-    margin:0;
+  color: blue;
+  font-size: 32px;
+  padding:0; 
+  margin:0;
+}
+.graphic {
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
 }
