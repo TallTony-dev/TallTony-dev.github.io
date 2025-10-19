@@ -50,5 +50,5 @@ a:hover {
     background-size: 800% 800%;
     background-clip: text;
     color: transparent;
-    animation: ease infinite;
+    animation: ease infinite; /*currently broken*/
 }
