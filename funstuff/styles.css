@@ -1,5 +1,5 @@
 
-p, h1 {
+p, h1, a {
   line-height: 1.4;
   padding-left: 30px;
   padding-right: 30px;
@@ -27,13 +27,13 @@ html, body {
   text-align: center;
 }
 a {
-  color: aliceblue;
+  color: rgb(144, 203, 255);
 }
 a:visited {
-  color: rgb(255, 0, 0); /* Example color for visited links */
+  color: rgb(255, 0, 0);
 }
 a:hover {
-  color: rgb(255, 238, 0); /* Example color on hover */
+  color: rgb(255, 238, 0);
 }
 .fun {
   color: blue;
